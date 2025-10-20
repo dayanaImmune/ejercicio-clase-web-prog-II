@@ -1,10 +1,9 @@
 const router = require("express").Router()
-const { addNewClient } = require("../../controllers/client.controllers")
-
+const { addNewClient, getClients, deleteClienteById, updateClienteById } = require("../../controllers/client.controllers")
 
 
 router.post("/client", addNewClient)
-router.get("/client", () => { })
-router.put("/client/:id", () => { })
-router.delete("/client/:id", () => { })
+router.get("/client", getClients)
+router.put("/client/:id", updateClienteById)
+router.delete("/client/:id", deleteClienteById)
 module.exports = router;

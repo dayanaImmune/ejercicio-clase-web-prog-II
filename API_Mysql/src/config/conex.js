@@ -1,5 +1,6 @@
 // conexion con la BD
 const mysql = require("mysql2");
+console.log(process.env.USER_DB)
 const pool = mysql.createPool({
     user: process.env.USER_DB,
     port: process.env.PORT_DB,
