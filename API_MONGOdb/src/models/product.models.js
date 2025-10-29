@@ -5,7 +5,10 @@ const productSchema = new Schema({
     price: { type: Number },
     available: { type: Boolean },
     description: { type: String },
-    stock: { type: Number }
+    stock: { type: Number },
+    // si quisieramos saber quien fue el usuario que creo el producto
+    user: { type: Schema.Types.ObjectId, ref: "user" }
+
 }, {
     collection: "product",
     timestamps: true,
