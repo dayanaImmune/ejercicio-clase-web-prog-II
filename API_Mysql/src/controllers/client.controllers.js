@@ -87,4 +87,9 @@ const login = async (req, res) => {
         return res.status(500).json({ success: false, msg: error })
     }
 }
-module.exports = { addNewClient, getClients, deleteClienteById, updateClienteById, registerClient, login }
+
+const renderTemplate = (req, res) => {
+
+    res.render("home", { data: ["maria", "luis"] })
+}
+module.exports = { addNewClient, getClients, deleteClienteById, updateClienteById, registerClient, login, renderTemplate }

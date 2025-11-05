@@ -1,18 +1,21 @@
 const express = require("express")
 const cors = require("cors")
 const dotenv = require("dotenv")
-dotenv.config()
+const router = require("./src/routes/users.routes")
+const sendEmail = require("./mailServices");
 
-const router = require("./src/routes/api.routes")
+
+dotenv.config()
 
 const server = express()
 server.use(cors())
 server.use(express.json())
-server.set("view engine", "ejs")
-server.use("/api", router)
+server.use("/user", router)
 
 server.listen(process.env.PORT, () => {
     console.log(`http://localhost:${process.env.PORT}`)
 })
 
-server.use(express.static("./web/dist"))
+
+
+await sendEmail("dayana.romero88@gmail.com", "Bienvenida/o", "html");

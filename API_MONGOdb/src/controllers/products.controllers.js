@@ -12,7 +12,6 @@ const getProductId = async (req, res) => {
     const product = await Product.findById(id)
     res.json(product)
 }
-
 const getPrice = async (req, res) => {
     const { max, min } = req.query
     const result = await Product.find({
@@ -20,7 +19,6 @@ const getPrice = async (req, res) => {
     })
     res.json(result)
 }
-
 const insertProduct = async (req, res) => {
     const findproduct = await Product.findOne({ name: req.body.name })
     if (!findproduct) {
@@ -32,7 +30,6 @@ const insertProduct = async (req, res) => {
     }
 
 }
-
 const updateProduct = async (req, res) => {
     const { productId } = req.params
     const result = await Product.findByIdAndUpdate(productId, req.body, { new: true })

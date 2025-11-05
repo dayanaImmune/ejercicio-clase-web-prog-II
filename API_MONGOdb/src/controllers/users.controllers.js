@@ -34,7 +34,6 @@ const addCart = async (req, res) => {
     res.json(result)
 
 }
-
 const getAllusers = async (req, res) => {
     const data = await User.find().populate("carts", "name price")
     res.json(data)
